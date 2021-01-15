@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Calc", "Calc", FormMethod.Get))
+{
+<div class="row">
+    
+    <div class="col-sm-4">
+        <p>Введите выражение</p>
+        <p>
+            @Html.TextBox("expression", "")
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <p> Результат</p>
+        <p>
+            @Html.TextBox("result", (int)@ViewBag.result)
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <p>Посчитать</p>
+        <p>
+            <input type="submit" name="Calc" value="Вычислить" />
+        </p>
+    </div>
+    </div>
+    
+}
+
